@@ -35,12 +35,16 @@ void case2()
 {
     int n = 10;
 
-    auto func = [=](int x)
+    auto func = [=](int x) mutable
     {
+        ++n;
         cout << x*n << endl;
     };
 
     func(3);
+    func(3);
+
+    cout << n << endl;
 }
 
 void case3()
@@ -118,7 +122,6 @@ public:
         {
             cout << "member = " << x << endl;
         };
-
     }
 };
 
@@ -162,15 +165,15 @@ private:
 
 int main()
 {
-    case1();
+    // case1();
     case2();
-    case3();
-    case4();
-    case5();
-    case6();
+    // case3();
+    // case4();
+    // case5();
+    // case6();
 
-    Demo d;
-    d.print();
+    // Demo d;
+    // d.print();
 
     cout << "lambda demo" << endl;
 }

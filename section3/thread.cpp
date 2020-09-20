@@ -62,7 +62,11 @@ void case2()
 
 void case3()
 {
-    atomic_int  x {0};
+    // atomic_int  x {0};
+    atomic_int x = {0};
+    // atomic_int x(0);
+    // atomic_int x = 0; // [错误]
+
     atomic_long y {1000L};
 
     assert(++x == 1);
@@ -151,9 +155,9 @@ void case4()
 
 int main()
 {
-    case1();
-    case2();
-    case3();
+    // case1();
+    // case2();
+    // case3();
     case4();
 
     cout << "thread demo" << endl;
